@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is for a Flutter application that helps you find and add Hostels.
+This project is for a Flutter application that helps you find and add Hostels around you.
 
 A few resources to get you started if this is your first Flutter project:
 
