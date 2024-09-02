@@ -6,6 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hostel_app/logged_homepage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:location/location.dart';
+import 'package:file_picker/file_picker.dart'; // Added for file picking on web
+import 'package:flutter/foundation.dart'; // Add this import
 
 class EditHostelDetailsForm extends StatefulWidget {
   @override
@@ -36,6 +38,7 @@ class _EditHostelDetailsFormState extends State<EditHostelDetailsForm> {
     // Add more facilities as needed
   ];
 
+  // ignore: unused_field
   final GlobalKey<State> _facilitiesDialogKey = GlobalKey<State>();
   // Location
   LocationData? _currentLocation;
@@ -55,12 +58,22 @@ class _EditHostelDetailsFormState extends State<EditHostelDetailsForm> {
 
   Future<void> _pickImage() async {
     try {
-      List<XFile>? pickedFiles = await _imagePicker.pickMultiImage();
+      if (kIsWeb) {
+        // Change this line
+        // For web
+        // ignore: unused_local_variable
+        final pickedFiles = await FilePicker.platform.pickFiles(
+          type: FileType.image,
+          allowMultiple: true,
+        );
+      } else {
+        List<XFile>? pickedFiles = await _imagePicker.pickMultiImage();
 
-      setState(() {
-        _images =
-            pickedFiles.map((pickedFile) => File(pickedFile.path)).toList();
-      });
+        setState(() {
+          _images =
+              pickedFiles.map((pickedFile) => File(pickedFile.path)).toList();
+        });
+      }
     } catch (e) {
       print('Error picking images: $e');
     }

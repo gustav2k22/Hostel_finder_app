@@ -3,6 +3,8 @@ import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:file_picker/file_picker.dart' as mobile;
 
 class HostelDetailsScreen extends StatefulWidget {
   final Map<String, dynamic> hostelData;
@@ -37,7 +39,7 @@ class _HostelDetailsScreenState extends State<HostelDetailsScreen> {
           ),
         ),
       ),
-      body:Column(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
@@ -86,14 +88,11 @@ class _HostelDetailsScreenState extends State<HostelDetailsScreen> {
                   'Address: ${widget.hostelData['address']}',
                   style: TextStyle(fontSize: 16),
                 ),
-
                 SizedBox(height: 8),
                 Text(
-                  'Price: \R\s\.${widget.hostelData['price']}',
+                  'Price: \G\H\₵\ ${widget.hostelData['price']}',
                   style: TextStyle(fontSize: 16),
                 ),
-                SizedBox(height: 8),
-
                 SizedBox(height: 8),
                 Text(
                   'Facilities: ${widget.hostelData['facilities'].join(', ')}',
@@ -105,7 +104,6 @@ class _HostelDetailsScreenState extends State<HostelDetailsScreen> {
                   style: TextStyle(fontSize: 16),
                 ),
                 ElevatedButton.icon(
-
                   onPressed: () {
                     openMaps(widget.hostelData['geopoint'] as GeoPoint);
                   },
@@ -123,7 +121,8 @@ class _HostelDetailsScreenState extends State<HostelDetailsScreen> {
                     SizedBox(width: 20),
                     ElevatedButton.icon(
                       onPressed: () {
-                        launchUrlString("tel:${widget.hostelData['contactNumber']}");
+                        launchUrlString(
+                            "tel:${widget.hostelData['contactNumber']}");
                       },
                       icon: Icon(Icons.phone),
                       label: Text('Contact'),
@@ -140,7 +139,8 @@ class _HostelDetailsScreenState extends State<HostelDetailsScreen> {
   }
 
   Future<void> openMaps(GeoPoint geopoint) async {
-    String googleUrl = 'https://www.google.com/maps/search/?api=1&query=${geopoint.latitude},${geopoint.longitude}';
+    String googleUrl =
+        'https://www.google.com/maps/search/?api=1&query=${geopoint.latitude},${geopoint.longitude}';
     if (await canLaunchUrlString(googleUrl)) {
       await launchUrlString(googleUrl);
     } else {
