@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hostel_app/utils.dart';
 import 'package:hostel_app/VerifyCodeScreen.dart';
+
 class LoginWithPhoneNumber extends StatefulWidget {
   const LoginWithPhoneNumber({Key? key}) : super(key: key);
 
@@ -26,9 +27,9 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
           children: [
             SizedBox(height: 80),
             TextFormField(
-              controller: phoneNumberController ,
+              controller: phoneNumberController,
               keyboardType: TextInputType.text,
-              decoration: InputDecoration(hintText: '+91'),
+              decoration: InputDecoration(hintText: '+233'),
             ),
             SizedBox(height: 80),
             ElevatedButton(

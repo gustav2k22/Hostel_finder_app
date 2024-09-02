@@ -46,6 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '908582132976',
     projectId: 'praticalproject-57474',
     authDomain: 'praticalproject-57474.firebaseapp.com',
+    databaseURL: 'https://praticalproject-57474-default-rtdb.firebaseio.com',
     storageBucket: 'praticalproject-57474.appspot.com',
     measurementId: 'G-PVKC28357R',
   );
@@ -55,6 +56,7 @@ class DefaultFirebaseOptions {
     appId: '1:908582132976:android:e9ee51a4b6e35e4d93f635',
     messagingSenderId: '908582132976',
     projectId: 'praticalproject-57474',
+    databaseURL: 'https://praticalproject-57474-default-rtdb.firebaseio.com',
     storageBucket: 'praticalproject-57474.appspot.com',
   );
 
@@ -63,6 +65,7 @@ class DefaultFirebaseOptions {
     appId: '1:908582132976:ios:c8342e0f64c3571593f635',
     messagingSenderId: '908582132976',
     projectId: 'praticalproject-57474',
+    databaseURL: 'https://praticalproject-57474-default-rtdb.firebaseio.com',
     storageBucket: 'praticalproject-57474.appspot.com',
     iosClientId: '908582132976-atrpbusso505h1jm0lq68845b44e6i1j.apps.googleusercontent.com',
     iosBundleId: 'com.example.hostelApp',
@@ -73,6 +76,7 @@ class DefaultFirebaseOptions {
     appId: '1:908582132976:ios:c8342e0f64c3571593f635',
     messagingSenderId: '908582132976',
     projectId: 'praticalproject-57474',
+    databaseURL: 'https://praticalproject-57474-default-rtdb.firebaseio.com',
     storageBucket: 'praticalproject-57474.appspot.com',
     iosClientId: '908582132976-atrpbusso505h1jm0lq68845b44e6i1j.apps.googleusercontent.com',
     iosBundleId: 'com.example.hostelApp',
@@ -84,6 +88,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '908582132976',
     projectId: 'praticalproject-57474',
     authDomain: 'praticalproject-57474.firebaseapp.com',
+    databaseURL: 'https://praticalproject-57474-default-rtdb.firebaseio.com',
     storageBucket: 'praticalproject-57474.appspot.com',
     measurementId: 'G-6QMFM7ZETB',
   );
